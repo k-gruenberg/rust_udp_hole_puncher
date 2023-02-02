@@ -28,7 +28,7 @@ fn main() {
     let args = Args::parse();
 
     // Prepare UDP socket:
-    let socket = UdpSocket::bind(("127.0.0.1", args.src_port)).expect("couldn't bind to address");
+    let socket = UdpSocket::bind(("0.0.0.0", args.src_port)).expect("couldn't bind to address");
 
     // Calculate and print punch time:
     let now = SystemTime::now().duration_since(UNIX_EPOCH).unwrap();
